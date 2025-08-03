@@ -1,0 +1,64 @@
+html, body {
+    height: 100%;
+}
+
+html, body, div, ul, li, h1, h2, h3, p {
+    margin: 0;
+    padding: 0;
+}
+
+#app-header {
+    height: 64px;
+    padding: 0 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px;
+    border-bottom-style: solid;
+    border-color: rgb(219, 219, 219);
+}
+
+#app-header ul li {
+    display: inline;
+    margin-left: 8px;
+}
+
+#app-header ul li span {
+    background-color: rgb(145, 174, 190);
+    border-radius: 8px;
+    padding: 8px;
+}
+
+#app-header ul li span:hover {
+    background-color: rgb(91, 121, 138);
+    cursor: pointer;
+}
+
+#app-body {
+    display: flex;
+    flex-direction: row;
+    height: calc(100% - 64px);
+}
+
+#side-bar {
+    width: 200px;
+}
+
+#side-bar ul li div {
+    background-color: rgb(206, 206, 206);
+    height: 56px;
+    margin: 16px 16px 16px 0;
+    padding-left: 64px;
+    align-content: center;
+    border-radius: 0px 64px 64px 0px;
+}
+
+#side-bar ul li div:hover { 
+    background-color: rgb(116, 141, 255);
+    cursor: pointer;
+}
+
+#page-content {
+    flex-grow: 1;
+}
