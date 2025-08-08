@@ -6,25 +6,10 @@
 </head>
 
 <body>
-    <div id="side-bar">
-        <ul>
-            <li><div>Meal Plans</div></li>
-            <li><div>Recipes</div></li>
-            <li><div>Ingredients</div></li>
-        </ul>
-    </div>
+    <div th:replace="~{fragments/navigation :: navigation}" />
 
     <div id="app-content-container">
-        <div id="app-content-header">
-            <div>
-                <ul>
-                    <li><span>Menu Item 1</span></li>
-                    <li><span>Menu Item 1</span></li>
-                    <li><span>Menu Item 1</span></li>
-                    <li><span>Menu Item 1</span></li>
-                </ul>
-            </div>
-        </div>
+        <div th:replace="~{fragments/appBar :: appBar}" />
         <div id="app-content">
             <div class="ingredient-card">
                 <span>Pasta - 100g</span>
