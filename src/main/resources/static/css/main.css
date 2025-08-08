@@ -9,19 +9,12 @@ html, body, div, ul, li, h1, h2, h3, p {
 
 body {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: start;
     background-color: rgb(11, 109, 189);
 }
 
-#app-content-container {
-    height: 100%;
-    width: calc(100% - 200px);
-    display: flex;
-    flex-direction: column;
-}
-
-#app-content-header {
+#app-bar {
     height: 64px;
     padding: 0 16px;
     display: flex;
@@ -30,20 +23,26 @@ body {
     align-items: center;
 }
 
-#app-content-header ul li {
+#app-bar ul li {
     display: inline;
     margin-left: 8px;
 }
 
-#app-content-header ul li span {
+#app-bar ul li span {
     background-color: rgb(145, 174, 190);
     border-radius: 8px;
     padding: 8px;
 }
 
-#app-content-header ul li span:hover {
+#app-bar ul li span:hover {
     background-color: rgb(91, 121, 138);
     cursor: pointer;
+}
+
+#app-body {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
 }
 
 #app-content {
@@ -54,12 +53,11 @@ body {
     box-shadow: -2px -2px 20px -1px rgba(87, 87, 87, 0.253);
 }
 
-#side-bar {
-    padding-top: 64px;
+#app-navigation {
     width: 250px;
 }
 
-#side-bar ul li div {
+#app-navigation ul li div {
     background-color: rgb(206, 206, 206);
     height: 56px;
     margin: 16px 32px 16px 0;
@@ -68,7 +66,7 @@ body {
     border-radius: 0px 64px 64px 0px;
 }
 
-#side-bar ul li div:hover { 
+#app-navigation ul li div:hover { 
     background-color: rgb(116, 141, 255);
     cursor: pointer;
 }

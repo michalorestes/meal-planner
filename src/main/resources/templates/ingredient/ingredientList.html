@@ -1,50 +1,41 @@
-<html xmlns:th="http://www.thymeleaf.org">
-
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" th:href="@{/css/main.css}" href="../../static/css/main.css" />
-</head>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout/layout}">
 
 <body>
-    <div th:replace="~{fragments/navigation :: navigation}" />
-
-    <div id="app-content-container">
-        <div th:replace="~{fragments/appBar :: appBar}" />
-        <div id="app-content">
-            <div class="ingredient-card">
-                <span>Pasta - 100g</span>
-                <div>
-                    <span>Calories: 100</span>
-                    <span>Protein: 12g</span>
-                    <span>Carbohydraes: 40g</span>
-                    <span>Fats: 2g</span>
-                    <span>Fibre: 0.3g</span>
-                </div>
+    <div layout:fragment="content">
+        <div class="ingredient-card">
+            <span>Pasta - 100g</span>
+            <div>
+                <span>Calories: 100</span>
+                <span>Protein: 12g</span>
+                <span>Carbohydraes: 40g</span>
+                <span>Fats: 2g</span>
+                <span>Fibre: 0.3g</span>
             </div>
+        </div>
 
-            <div class="ingredient-card">
-                <span>Pasta - 100g</span>
-                <div>
-                    <span>Calories: 100</span>
-                    <span>Protein: 12g</span>
-                    <span>Carbohydraes: 40g</span>
-                    <span>Fats: 2g</span>
-                    <span>Fibre: 0.3g</span>
-                </div>
+        <div class="ingredient-card">
+            <span>Pasta - 100g</span>
+            <div>
+                <span>Calories: 100</span>
+                <span>Protein: 12g</span>
+                <span>Carbohydraes: 40g</span>
+                <span>Fats: 2g</span>
+                <span>Fibre: 0.3g</span>
             </div>
+        </div>
 
-            <div class="ingredient-card">
-                <span>Pasta - 100g</span>
-                <div>
-                    <span>Calories: 100</span>
-                    <span>Protein: 12g</span>
-                    <span>Carbohydraes: 40g</span>
-                    <span>Fats: 2g</span>
-                    <span>Fibre: 0.3g</span>
-                </div>
+        <div class="ingredient-card">
+            <span>Pasta - 100g</span>
+            <div>
+                <span>Calories: 100</span>
+                <span>Protein: 12g</span>
+                <span>Carbohydraes: 40g</span>
+                <span>Fats: 2g</span>
+                <span>Fibre: 0.3g</span>
             </div>
         </div>
     </div>
+
 </body>
 
 </html>

@@ -1,0 +1,21 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/main.css}" href="../../static/css/main.css" />
+</head>
+
+<body>
+    <div th:replace="~{layout/appBar :: appBar}" />
+
+    <div id="app-body">
+        <div th:replace="~{layout/navigation :: navigation}" />
+
+        <div id="app-content" layout:fragment="content">
+
+        </div>
+    </div>
+
+</body>
+
+</html>
