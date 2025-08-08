@@ -7,48 +7,62 @@ html, body, div, ul, li, h1, h2, h3, p {
     padding: 0;
 }
 
-#app-header {
+body {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    background-color: rgb(11, 109, 189);
+}
+
+#app-content-container {
+    height: 100%;
+    width: calc(100% - 200px);
+    display: flex;
+    flex-direction: column;
+}
+
+#app-content-header {
     height: 64px;
     padding: 0 16px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: end;
     align-items: center;
-    border-bottom: 1px;
-    border-bottom-style: solid;
-    border-color: rgb(219, 219, 219);
 }
 
-#app-header ul li {
+#app-content-header ul li {
     display: inline;
     margin-left: 8px;
 }
 
-#app-header ul li span {
+#app-content-header ul li span {
     background-color: rgb(145, 174, 190);
     border-radius: 8px;
     padding: 8px;
 }
 
-#app-header ul li span:hover {
+#app-content-header ul li span:hover {
     background-color: rgb(91, 121, 138);
     cursor: pointer;
 }
 
-#app-body {
-    display: flex;
-    flex-direction: row;
-    height: calc(100% - 64px);
+#app-content {
+    background-color: white;
+    flex-grow: 1;    
+    border-radius: 16px 0px 0px 0px;
+    padding: 32px;
+    box-shadow: -2px -2px 20px -1px rgba(87, 87, 87, 0.253);
 }
 
 #side-bar {
-    width: 200px;
+    padding-top: 64px;
+    width: 250px;
 }
 
 #side-bar ul li div {
     background-color: rgb(206, 206, 206);
     height: 56px;
-    margin: 16px 16px 16px 0;
+    margin: 16px 32px 16px 0;
     padding-left: 64px;
     align-content: center;
     border-radius: 0px 64px 64px 0px;
@@ -59,6 +73,20 @@ html, body, div, ul, li, h1, h2, h3, p {
     cursor: pointer;
 }
 
-#page-content {
-    flex-grow: 1;
+.ingredient-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: lightblue;
+    padding: 32px 32px;
+    border-radius: 8px;
+    margin: 16px 0px;
+}
+
+.ingredient-card:hover {
+    background-color: rgb(195, 231, 243);
+}
+
+.ingredient-card div span {
+    margin-left: 32px;
 }
