@@ -1,0 +1,10 @@
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    passwordHash VARCHAR(255) NOT NULL,
+    createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    UNIQUE (email)
+);
+
+CREATE INDEX idx_users_email ON users(email);
