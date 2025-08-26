@@ -10,9 +10,9 @@ public class PasswordEncryptionServiceTest {
     @Test
     public void testCanEncryptPassword() {
 
-        PasswordEncryptionServiceInterface encryptionService = new PasswordEncryptionService(new BCryptPasswordEncoder());
+        PasswordEncoderServiceInterface encryptionService = new PasswordEncryptionService(new BCryptPasswordEncoder());
         String rawPassword = "testPassword";
-        String encryptedPassword = encryptionService.encrypt(rawPassword);
+        String encryptedPassword = encryptionService.encode(rawPassword);
 
         assertNotNull(encryptedPassword);
         assertNotEquals(rawPassword, encryptedPassword);
