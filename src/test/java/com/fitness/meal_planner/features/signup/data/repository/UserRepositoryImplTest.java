@@ -1,46 +1,52 @@
-package com.fitness.meal_planner.features.signup.domain.repositories;
+package com.fitness.meal_planner.features.signup.data.repository;
 
-import com.fitness.meal_planner.features.signup.data.model.User;
+import com.fitness.meal_planner.features.signup.data.model.UserModel;
+
+import com.fitness.meal_planner.features.signup.domain.entity.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
+import org.springframework.context.annotation.Import;
 
 import java.time.LocalDateTime;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 @DataJpaTest
-public class UserRepositoryTest {
+@Import(UserRepositoryImpl.class)
+public class UserRepositoryImplTest {
 
     @Autowired
     private TestEntityManager entityManager;
 
     @Autowired
-    private UserRepository userRepository;
+    private UserRepositoryImpl userRepository;
 
     @Test
     public void testCanSaveUser() {
         // given
-        User user = new User();
-        user.setUsername("testuser");
-        user.setEmail("testuser@example.com");
-        user.setPasswordHash("password123");
-        user.setCreatedAt(LocalDateTime.now());
+        User user = new User(
+                null,
+                "testuser",
+                "testuser@example.com",
+                "password123",
+                LocalDateTime.now()
+        );
 
         // when
         User savedUser = userRepository.save(user);
 
         // then
-        User foundUser = entityManager.find(User.class, savedUser.getId());
+        UserModel foundUser = entityManager.find(UserModel.class, savedUser.id());
         assertThat(foundUser).isNotNull();
-        assertThat(foundUser.getUsername()).isEqualTo(user.getUsername());
+        assertThat(foundUser.getUsername()).isEqualTo(user.username());
     }
 
     @Test
     public void testCanFindUserById() {
         // given
-        User user = new User();
+        UserModel user = new UserModel();
         user.setUsername("testuser");
         user.setEmail("testuser@example.com");
         user.setPasswordHash("password123");
@@ -53,6 +59,6 @@ public class UserRepositoryTest {
 
         // then
         assertThat(foundUser).isNotNull();
-        assertThat(foundUser.getUsername()).isEqualTo(user.getUsername());
+        assertThat(foundUser.username()).isEqualTo(user.getUsername());
     }
 }
