@@ -3,6 +3,9 @@ package com.fitness.meal_planner.features.signup.data.repository;
 import com.fitness.meal_planner.features.signup.data.mapper.UserMapper;
 import com.fitness.meal_planner.features.signup.data.model.UserModel;
 import lombok.AllArgsConstructor;
+
+import java.util.Optional;
+
 import org.springframework.stereotype.Repository;
 
 import com.fitness.meal_planner.features.signup.domain.entity.User;
@@ -12,13 +15,13 @@ import com.fitness.meal_planner.features.signup.domain.repository.UserRepository
 @AllArgsConstructor
 public class UserRepositoryImpl implements UserRepository {
 
-    private UserJpaRepository userJpaRepository;
+    private final UserJpaRepository userJpaRepository;
 
     @Override
-    public User findByEmail(String email) {
-        UserModel model = userJpaRepository.findByEmail(email);
+    public Optional<User> findByEmail(String email) {
+        Optional<UserModel> model = userJpaRepository.findByEmail(email);
 
-        return UserMapper.toDomainEntity(model);
+        return model.map(UserMapper::toDomainEntity);
     }
 
     @Override

@@ -6,11 +6,11 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import org.junit.jupiter.api.Test;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-public class PasswordEncryptionServiceTest {
+public class PasswordEncoderServiceTest {
     @Test
     public void testCanEncryptPassword() {
 
-        PasswordEncoderServiceInterface encryptionService = new PasswordEncryptionService(new BCryptPasswordEncoder());
+        PasswordEncoderServiceInterface encryptionService = new PasswordEncoderService(new BCryptPasswordEncoder());
         String rawPassword = "testPassword";
         String encryptedPassword = encryptionService.encode(rawPassword);
 
