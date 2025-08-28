@@ -20,12 +20,8 @@ public class UserRepositoryImpl implements UserRepository {
     @Override
     public Optional<User> findByEmail(String email) {
         Optional<UserModel> model = userJpaRepository.findByEmail(email);
-        
-        if (model.isPresent()) {
-            return Optional.of(UserMapper.toDomainEntity(model.get()));    
-        }
 
-        return Optional.empty();
+        return model.map(UserMapper::toDomainEntity);
     }
 
     @Override

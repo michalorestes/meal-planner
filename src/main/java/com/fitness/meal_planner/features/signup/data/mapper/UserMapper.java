@@ -3,7 +3,7 @@ package com.fitness.meal_planner.features.signup.data.mapper;
 import com.fitness.meal_planner.features.signup.data.model.UserModel;
 import com.fitness.meal_planner.features.signup.domain.entity.User;
 import com.fitness.meal_planner.features.signup.domain.valueobject.EmailAddress;
-import com.fitness.meal_planner.features.signup.domain.valueobject.Password;
+import com.fitness.meal_planner.features.signup.domain.valueobject.PasswordHashed;
 import com.fitness.meal_planner.features.signup.domain.valueobject.UserId;
 import com.fitness.meal_planner.features.signup.domain.valueobject.Username;
 
@@ -22,7 +22,7 @@ public final class UserMapper {
                 new UserId(userModel.getId()),
                 new Username(userModel.getUsername()),
                 new EmailAddress(userModel.getEmail()),
-                new Password(userModel.getPasswordHash()),
+                new PasswordHashed(userModel.getPasswordHash()),
                 userModel.getCreatedAt()
         );
     }
@@ -40,7 +40,7 @@ public final class UserMapper {
 
         userModel.setUsername(user.username().username());
         userModel.setEmail(user.email().email());
-        userModel.setPasswordHash(user.passwordHash().password());
+        userModel.setPasswordHash(user.passwordHashed().password());
         userModel.setCreatedAt(user.createdAt());
 
         return userModel;

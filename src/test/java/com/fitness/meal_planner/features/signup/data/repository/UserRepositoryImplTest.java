@@ -4,7 +4,7 @@ import com.fitness.meal_planner.features.signup.data.model.UserModel;
 
 import com.fitness.meal_planner.features.signup.domain.entity.User;
 import com.fitness.meal_planner.features.signup.domain.valueobject.EmailAddress;
-import com.fitness.meal_planner.features.signup.domain.valueobject.Password;
+import com.fitness.meal_planner.features.signup.domain.valueobject.PasswordHashed;
 import com.fitness.meal_planner.features.signup.domain.valueobject.Username;
 
 import org.junit.jupiter.api.Test;
@@ -37,7 +37,7 @@ public class UserRepositoryImplTest {
                 null,
                 new Username("testUser"),
                 new EmailAddress("testuser@example.com"),
-                new Password("password123"),
+                new PasswordHashed("password123"),
                 LocalDateTime.now()
         );
 

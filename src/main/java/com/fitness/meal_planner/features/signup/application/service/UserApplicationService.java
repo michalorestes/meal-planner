@@ -6,7 +6,7 @@ import com.fitness.meal_planner.features.signup.application.exception.UserExists
 import com.fitness.meal_planner.features.signup.domain.entity.User;
 import com.fitness.meal_planner.features.signup.domain.repository.UserRepository;
 import com.fitness.meal_planner.features.signup.domain.valueobject.EmailAddress;
-import com.fitness.meal_planner.features.signup.domain.valueobject.Password;
+import com.fitness.meal_planner.features.signup.domain.valueobject.PasswordHashed;
 import com.fitness.meal_planner.features.signup.domain.valueobject.Username;
 
 import lombok.AllArgsConstructor;
@@ -28,7 +28,7 @@ public class UserApplicationService {
             null, 
             new Username(createUserCommand.username()),
             new EmailAddress(createUserCommand.email()),
-            new Password(passwordEncoderService.encode(createUserCommand.password())),
+            new PasswordHashed(passwordEncoderService.encode(createUserCommand.password())),
             LocalDateTime.now()
         );
 

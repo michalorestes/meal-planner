@@ -6,7 +6,7 @@ import com.fitness.meal_planner.features.signup.application.exception.UserExists
 import com.fitness.meal_planner.features.signup.domain.entity.User;
 import com.fitness.meal_planner.features.signup.domain.repository.UserRepository;
 import com.fitness.meal_planner.features.signup.domain.valueobject.EmailAddress;
-import com.fitness.meal_planner.features.signup.domain.valueobject.Password;
+import com.fitness.meal_planner.features.signup.domain.valueobject.PasswordHashed;
 import com.fitness.meal_planner.features.signup.domain.valueobject.UserId;
 import com.fitness.meal_planner.features.signup.domain.valueobject.Username;
 
@@ -35,7 +35,7 @@ public class UserApplicationServiceTest {
             new UserId(1L), 
             new Username("testUser"), 
             new EmailAddress("test@mail.com"), 
-            new Password("testPassword"), 
+            new PasswordHashed("testPassword"),
             LocalDateTime.now()
         );
         
@@ -66,7 +66,7 @@ public class UserApplicationServiceTest {
             new UserId(1L), 
             new Username("testUser"), 
             new EmailAddress("test@mail.com"), 
-            new Password("testPassword"), 
+            new PasswordHashed("testPassword"),
             LocalDateTime.now()
         );
         
