@@ -2,6 +2,10 @@ package com.fitness.meal_planner.features.signup.data.mapper;
 
 import com.fitness.meal_planner.features.signup.data.model.UserModel;
 import com.fitness.meal_planner.features.signup.domain.entity.User;
+import com.fitness.meal_planner.features.signup.domain.valueobject.EmailAddress;
+import com.fitness.meal_planner.features.signup.domain.valueobject.Password;
+import com.fitness.meal_planner.features.signup.domain.valueobject.UserId;
+import com.fitness.meal_planner.features.signup.domain.valueobject.Username;
 
 public final class UserMapper {
 
@@ -15,10 +19,10 @@ public final class UserMapper {
         }
 
         return new User(
-                userModel.getId(),
-                userModel.getUsername(),
-                userModel.getEmail(),
-                userModel.getPasswordHash(),
+                new UserId(userModel.getId()),
+                new Username(userModel.getUsername()),
+                new EmailAddress(userModel.getEmail()),
+                new Password(userModel.getPasswordHash()),
                 userModel.getCreatedAt()
         );
     }
@@ -29,10 +33,14 @@ public final class UserMapper {
         }
 
         UserModel userModel = new UserModel();
-        userModel.setId(user.id());
-        userModel.setUsername(user.username());
-        userModel.setEmail(user.email());
-        userModel.setPasswordHash(user.passwordHash());
+
+        if (user.id() != null) {
+            userModel.setId(user.id().userId());
+        }
+
+        userModel.setUsername(user.username().username());
+        userModel.setEmail(user.email().email());
+        userModel.setPasswordHash(user.passwordHash().password());
         userModel.setCreatedAt(user.createdAt());
 
         return userModel;
