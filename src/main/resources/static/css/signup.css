@@ -1,0 +1,69 @@
+#card {
+  background: var(--md-sys-color-surface-container);
+  border-radius: 16px;
+  width: 720px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  padding: 40px;
+}
+
+#card-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  padding: 0;
+}
+
+#card-left h2 {
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--md-sys-color-on-surface);
+  line-height: 1.1;
+}
+
+#card-right {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+#card-right form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  max-width: 320px;
+}
+
+#card-right form md-outlined-text-field,
+#card-right form md-filled-tonal-button {
+  width: 100%;
+}
+
+#card-right form md-filled-tonal-button {
+  background: var(--md-sys-color-primary-container);
+  color: var(--md-sys-color-on-primary-container);
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+#card-right form .spacer {
+  height: 8px;
+}
+
+.light {
+  min-height: 100vh;
+  background: var(--md-sys-color-background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

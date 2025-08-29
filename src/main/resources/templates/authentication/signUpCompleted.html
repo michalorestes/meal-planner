@@ -1,0 +1,38 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+    <head>
+        <link rel="stylesheet" th:href="@{/css/main.css}" href="../../static/css/main.css" />
+        <link rel="stylesheet" th:href="@{/css/login.css}" href="../../static/css/signup.css" />
+        <link rel="stylesheet" th:href="@{/css/reset.css}" href="../../static/css/reset.css" />
+        <link rel="stylesheet" th:href="@{/css/materialTheme.css}" href="../../static/css/materialTheme.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+          <script type="importmap">
+            {
+                "imports": {
+                "@material/web/": "https://esm.run/@material/web/"
+                }
+            }
+        </script>
+
+        <script type="module">
+            import "@material/web/all.js";
+            import { styles as typescaleStyles } from "@material/web/typography/md-typescale-styles.js";
+            document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+        </script>
+    </head>
+
+    <body>
+        <div class="light">
+            <div id="card">
+                <div id="card-left">
+                    <h2>Registration <br> Completed!</h2>
+                </div>
+
+                <div id="card-right">
+                    <p>Check your e-mail. We've sent you an activation link.</p>
+                    <md-filled-tonal-button>Go to Meal Planner</md-filled-tonal-button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
