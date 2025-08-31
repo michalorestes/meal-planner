@@ -1,14 +1,16 @@
 package com.fitness.meal_planner.features.signup.application.service;
 
-import com.fitness.meal_planner.features.signup.application.dto.CreateUserCommand;
-import com.fitness.meal_planner.features.signup.application.dto.UserDto;
-import com.fitness.meal_planner.features.signup.application.exception.UserExistsException;
-import com.fitness.meal_planner.features.signup.domain.entity.User;
-import com.fitness.meal_planner.features.signup.domain.repository.UserRepository;
-import com.fitness.meal_planner.features.signup.domain.valueobject.EmailAddress;
-import com.fitness.meal_planner.features.signup.domain.valueobject.PasswordHashed;
-import com.fitness.meal_planner.features.signup.domain.valueobject.UserId;
-import com.fitness.meal_planner.features.signup.domain.valueobject.Username;
+import com.fitness.meal_planner.features.authentication.application.dto.CreateUserCommand;
+import com.fitness.meal_planner.features.authentication.application.dto.UserDto;
+import com.fitness.meal_planner.features.authentication.application.exception.UserExistsException;
+import com.fitness.meal_planner.features.authentication.application.service.PasswordEncoderServiceInterface;
+import com.fitness.meal_planner.features.authentication.application.service.UserApplicationService;
+import com.fitness.meal_planner.features.authentication.domain.entity.User;
+import com.fitness.meal_planner.features.authentication.domain.repository.UserRepository;
+import com.fitness.meal_planner.features.authentication.domain.valueobject.EmailAddress;
+import com.fitness.meal_planner.features.authentication.domain.valueobject.PasswordHashed;
+import com.fitness.meal_planner.features.authentication.domain.valueobject.UserId;
+import com.fitness.meal_planner.features.authentication.domain.valueobject.Username;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
