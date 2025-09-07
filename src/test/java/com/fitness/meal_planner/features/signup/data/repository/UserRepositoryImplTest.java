@@ -1,11 +1,12 @@
 package com.fitness.meal_planner.features.signup.data.repository;
 
-import com.fitness.meal_planner.features.signup.data.model.UserModel;
+import com.fitness.meal_planner.features.authentication.data.model.UserModel;
 
-import com.fitness.meal_planner.features.signup.domain.entity.User;
-import com.fitness.meal_planner.features.signup.domain.valueobject.EmailAddress;
-import com.fitness.meal_planner.features.signup.domain.valueobject.PasswordHashed;
-import com.fitness.meal_planner.features.signup.domain.valueobject.Username;
+import com.fitness.meal_planner.features.authentication.data.repository.UserRepositoryImpl;
+import com.fitness.meal_planner.features.authentication.domain.entity.User;
+import com.fitness.meal_planner.features.authentication.domain.valueobject.EmailAddress;
+import com.fitness.meal_planner.features.authentication.domain.valueobject.PasswordHashed;
+import com.fitness.meal_planner.features.authentication.domain.valueobject.Username;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,0 +1,45 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" th:href="@{/css/main.css}" href="../../static/css/main.css" />
+    <link rel="stylesheet" th:href="@{/css/signup.css}" href="../../static/css/signup.css" />
+    <link rel="stylesheet" th:href="@{/css/reset.css}" href="../../static/css/reset.css" />
+    <link rel="stylesheet" th:href="@{/css/materialTheme.css}" href="../../static/css/materialTheme.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+
+    <script type="importmap">
+            {
+                "imports": {
+                    "@material/web/": "https://esm.run/@material/web/"
+                }
+            }
+    </script>
+
+    <script type="module">
+        import "@material/web/all.js";
+        import { styles as typescaleStyles } from "@material/web/typography/md-typescale-styles.js";
+        document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+    </script>
+</head>
+
+<body>
+    <div class="light">
+        <div id="card">
+            <div id="card-left">
+                <h2>Create a<br>Meal Planner<br>account</h2>
+            </div>
+            <div id="card-right">
+                <form>
+                    <md-outlined-text-field label="Username" name="username" required></md-outlined-text-field>
+                    <md-outlined-text-field label="E-mail" name="email" type="email" required></md-outlined-text-field>
+                    <md-outlined-text-field label="Password" name="password" type="password" required></md-outlined-text-field>
+                    <div class="spacer"></div>
+                    <md-filled-tonal-button type="submit">Register</md-filled-tonal-button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

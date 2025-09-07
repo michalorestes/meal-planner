@@ -1,0 +1,45 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" th:href="@{/css/main.css}" href="../../static/css/main.css" />
+  <link rel="stylesheet" th:href="@{/css/login.css}" href="../../static/css/login.css" />
+  <link rel="stylesheet" th:href="@{/css/reset.css}" href="../../static/css/reset.css" />
+  <link rel="stylesheet" th:href="@{/css/materialTheme.css}" href="../../static/css/materialTheme.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <script type="importmap">
+      {
+        "imports": {
+          "@material/web/": "https://esm.run/@material/web/"
+        }
+      }
+  </script>
+
+  <script type="module">
+    import "@material/web/all.js";
+    import { styles as typescaleStyles } from "@material/web/typography/md-typescale-styles.js";
+    document.adoptedStyleSheets.push(typescaleStyles.styleSheet);
+  </script>
+</head>
+
+<body>
+  <div class="light">
+    <div id="login-container">
+      <div id="login-image-container">
+        <img src="https://www.naturemade.com/cdn/shop/articles/how-to-eat-healthy_960x.jpg" alt="foodImage" />
+      </div>
+
+      <div id="login-form-container">
+        <form>
+          <md-outlined-text-field label="Username"></md-outlined-text-field>
+          <md-outlined-text-field label="Password"></md-outlined-text-field>
+          <md-filled-tonal-button type="submit">Login</md-filled-tonal-button>
+          <a href="/signup">Register</a>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

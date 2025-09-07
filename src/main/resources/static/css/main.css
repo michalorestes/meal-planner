@@ -1,5 +1,7 @@
 html, body {
     height: 100%;
+      font-family: 'Roboto', Arial, Helvetica, sans-serif;
+      font-size: 14px;
 }
 
 html, body, div, ul, li, h1, h2, h3, p {
@@ -11,7 +13,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: start;
-    background-color: rgb(11, 109, 189);
+    background: var(--md-sys-color-background);
 }
 
 #app-bar {
