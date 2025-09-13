@@ -30,10 +30,11 @@
                 <h2>Create a<br>Meal Planner<br>account</h2>
             </div>
             <div id="card-right">
-                <form>
+                <form method="post" action="/signup">
                     <md-outlined-text-field label="Username" name="username" required></md-outlined-text-field>
                     <md-outlined-text-field label="E-mail" name="email" type="email" required></md-outlined-text-field>
                     <md-outlined-text-field label="Password" name="password" type="password" required></md-outlined-text-field>
+                    <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
                     <div class="spacer"></div>
                     <md-filled-tonal-button type="submit">Register</md-filled-tonal-button>
                 </form>

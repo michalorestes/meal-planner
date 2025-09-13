@@ -12,13 +12,18 @@ import com.fitness.meal_planner.features.authentication.domain.valueobject.Usern
 import lombok.AllArgsConstructor;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Optional;
 
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service
 @AllArgsConstructor
-public class UserApplicationService {
+public class UserApplicationService implements UserDetailsService {
 
     private final UserRepository userRepository;
     private final PasswordEncoderServiceInterface passwordEncoderService;
@@ -41,5 +46,15 @@ public class UserApplicationService {
         User createdUser = userRepository.save(user);
 
         return new UserDto(createdUser.id().userId());
+    }
+
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+        User user = userRepository.findByEmail(email).orElseThrow(() -> new UsernameNotFoundException("User not found"));
+        
+        return new org.springframework.security.core.userdetails.User(
+            user.email().email(),
+            user.passwordHashed().password(),
+            List.of(new SimpleGrantedAuthority("ROLE_USER"))
+        );
     }
 }

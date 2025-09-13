@@ -31,9 +31,10 @@
       </div>
 
       <div id="login-form-container">
-        <form>
-          <md-outlined-text-field label="Username"></md-outlined-text-field>
-          <md-outlined-text-field label="Password"></md-outlined-text-field>
+        <form th:action="@{/login}" method="post">
+          <md-outlined-text-field label="Email" type="email" name="username" autocomplete="email" required></md-outlined-text-field>
+          <md-outlined-text-field label="Password" type="password" name="password" autocomplete="current-password" required></md-outlined-text-field>
+          <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
           <md-filled-tonal-button type="submit">Login</md-filled-tonal-button>
           <a href="/signup">Register</a>
         </form>
