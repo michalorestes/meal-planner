@@ -1,38 +1,54 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout/layout}">
 
 <body>
-    <div layout:fragment="content">
-        <div class="ingredient-card">
-            <span>Pasta - 100g</span>
-            <div>
-                <span>Calories: 100</span>
-                <span>Protein: 12g</span>
-                <span>Carbohydraes: 40g</span>
-                <span>Fats: 2g</span>
-                <span>Fibre: 0.3g</span>
-            </div>
-        </div>
+    <div layout:fragment="content" class="flex flex-column flex-gap-16">
+        <div id="app-bar" class="flex flex-row flex-justify-end">
+            <md-filled-button>
+                <svg slot="icon" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
+                </svg>
+                Create New Ingredient
+            </md-filled-button>
+        </div >
 
-        <div class="ingredient-card">
-            <span>Pasta - 100g</span>
-            <div>
-                <span>Calories: 100</span>
-                <span>Protein: 12g</span>
-                <span>Carbohydraes: 40g</span>
-                <span>Fats: 2g</span>
-                <span>Fibre: 0.3g</span>
-            </div>
-        </div>
+        <div id="page-content" class="flex flex-column flex-gap-16">
 
-        <div class="ingredient-card">
-            <span>Pasta - 100g</span>
-            <div>
-                <span>Calories: 100</span>
-                <span>Protein: 12g</span>
-                <span>Carbohydraes: 40g</span>
-                <span>Fats: 2g</span>
-                <span>Fibre: 0.3g</span>
+            <div class="ingredient-card flex flex-row flex-space-between flex-row-horizontal-center">
+                <span class="ingredient-title">Pasta - 100g</span>
+                <div class="flex flex-row flex-gap-16">
+                    <span>Calories: 100</span>
+                    <span>Protein: 12g</span>
+                    <span>Carbohydraes: 40g</span>
+                    <span>Fats: 2g</span>
+                    <span>Fibre: 0.3g</span>
+                </div>
             </div>
+
+            <div class="ingredient-card flex flex-row flex-space-between flex-row-horizontal-center">
+                <span class="ingredient-title">Pasta - 100g</span>
+                <div class="flex flex-row flex-gap-16">
+                    <span>Calories: 100</span>
+                    <span>Protein: 12g</span>
+                    <span>Carbohydraes: 40g</span>
+                    <span>Fats: 2g</span>
+                    <span>Fibre: 0.3g</span>
+                </div>
+            </div>
+
+            <div class="ingredient-card flex flex-row flex-space-between flex-row-horizontal-center">
+                <span class="ingredient-title">Pasta - 100g</span>
+                <div class="flex flex-row flex-gap-16">
+                    <span>Calories: 100</span>
+                    <span>Protein: 12g</span>
+                    <span>Carbohydraes: 40g</span>
+                    <span>Fats: 2g</span>
+                    <span>Fibre: 0.3g</span>
+                </div>
+            </div>
+
+        </div> <!-- Page Content -->
+
+
         </div>
     </div>
 

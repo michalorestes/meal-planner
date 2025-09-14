@@ -1,0 +1,15 @@
+.ingredient-card {
+    height: 64px;
+    padding: 0 16px;
+    border-radius: 16px;
+    color: var(--md-sys-color-on-secondary-container);
+    background-color: var( --md-sys-color-surface-container);
+}
+
+.ingredient-card:hover {
+    background-color: var( --md-sys-color-surface-container-high);
+}
+
+.ingredient-title {
+    font-weight: 500;
+}
