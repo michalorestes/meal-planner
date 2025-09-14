@@ -2,6 +2,7 @@ package com.fitness.meal_planner.features.ingredients.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.servlet.MockMvc;
 
 import com.fitness.meal_planner.features.ingredients.presentation.controllers.IngredientsController;
@@ -17,6 +18,7 @@ public class IngredientsControllerTest {
     private MockMvc mockMvc;
 
     @Test
+    @WithMockUser
     public void testIngredientsAreDisplayed() throws Exception {
         mockMvc.perform(get("/ingredients/view"))
             .andExpect(status().isOk());
