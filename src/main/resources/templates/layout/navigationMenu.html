@@ -1,0 +1,23 @@
+<div th:fragment="navigationMenu" class="flex flex-column flex-gap-32">
+    <h3>Menu</h3>
+    <div class="flex flex-column flex-gap-8">
+        <button class="navigation-button flex flex-row flex-row-horizontal-center flex-gap-16 inactive">
+            <svg slot="icon" class="navigation-icon" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-760v560q0 33-23.5 56.5T760-120H200Zm560-80v-560H200v560h560Zm-400-80h60v-160q26-7 43-28.5t17-48.5v-163h-40v151h-30v-151h-40v151h-30v-151h-40v163q0 27 17 48.5t43 28.5v160Zm240 0h60v-400q-50 0-85 35t-35 85v120h60v160Zm-400 80v-560 560Z"/>
+            </svg>
+            <span>Meal Plans</span>
+        </button>
+        <button class="navigation-button flex flex-row flex-row-horizontal-center flex-gap-16 inactive">
+            <svg slot="icon" class="navigation-icon" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M360-400h80v-200h-80v200Zm-160-60q-46-23-73-66.5T100-621q0-75 51.5-127T278-800q12 0 24.5 2t24.5 5q25-41 65-64t88-23q48 0 88 23t65 64q12-3 24-5t25-2q75 0 126.5 52T860-621q0 51-27 94.5T760-460v220H200v-220Zm320 60h80v-200h-80v200Zm-240 80h400v-189l44-22q26-13 41-36.5t15-52.5q0-42-28.5-71T682-720q-11 0-20 2t-19 5l-47 13-31-52q-14-23-36.5-35.5T480-800q-26 0-48.5 12.5T395-752l-31 52-48-13q-10-2-19.5-4.5T277-720q-41 0-69 29t-28 71q0 29 15 52.5t41 36.5l44 22v189Zm-80 80h80v80h400v-80h80v160H200v-160Zm280-80Z"/>
+            </svg>
+            <span>Recipes</span>
+        </button>
+        <button class="navigation-button flex flex-row flex-row-horizontal-center flex-gap-16 active">
+            <svg slot="icon" class="navigation-icon" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M640-80q-100 0-170-70t-70-170q0-100 70-170t170-70q100 0 170 70t70 170q0 100-70 170T640-80Zm0-80q66 0 113-47t47-113q0-66-47-113t-113-47q-66 0-113 47t-47 113q0 66 47 113t113 47Zm-480 0q-33 0-56.5-23.5T80-240v-304q0-8 1.5-16t4.5-16l80-184h-6q-17 0-28.5-11.5T120-800v-40q0-17 11.5-28.5T160-880h280q17 0 28.5 11.5T480-840v40q0 17-11.5 28.5T440-760h-6l66 152q-19 10-36 21t-32 25l-84-198h-96l-92 216v304h170q5 21 13.5 41.5T364-160H160Zm480-440q-42 0-71-29t-29-71q0-42 29-71t71-29v200q0-42 29-71t71-29q42 0 71 29t29 71H640Z"/>
+            </svg>
+            <span>Ingredients</span>
+        </button>
+    </div>
+</div>
