@@ -1,0 +1,6 @@
+#app-page-content {
+  flex: 1 1 0;
+  height: 100vh;
+  overflow-y: auto; /* Only this area scrolls */
+  padding: 16px 16px 0px 16px;
+}
