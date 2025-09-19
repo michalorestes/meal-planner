@@ -1,10 +1,8 @@
-package com.fitness.meal_planner.features.signup.application.service;
+package com.fitness.meal_planner.features.authentication.application.service;
 
 import com.fitness.meal_planner.features.authentication.application.dto.CreateUserCommand;
 import com.fitness.meal_planner.features.authentication.application.dto.UserDto;
 import com.fitness.meal_planner.features.authentication.application.exception.UserExistsException;
-import com.fitness.meal_planner.features.authentication.application.service.PasswordEncoderServiceInterface;
-import com.fitness.meal_planner.features.authentication.application.service.UserApplicationService;
 import com.fitness.meal_planner.features.authentication.domain.entity.User;
 import com.fitness.meal_planner.features.authentication.domain.repository.UserRepository;
 import com.fitness.meal_planner.features.authentication.domain.valueobject.EmailAddress;
@@ -34,9 +32,9 @@ public class UserApplicationServiceTest {
         PasswordEncoderServiceInterface passwordEncoderServiceMock = Mockito.mock(PasswordEncoderServiceInterface.class);
 
         User userCreated = new User(
-            new UserId(1L), 
-            new Username("testUser"), 
-            new EmailAddress("test@mail.com"), 
+            new UserId(1L),
+            new Username("testUser"),
+            new EmailAddress("test@mail.com"),
             new PasswordHashed("testPassword"),
             LocalDateTime.now()
         );
@@ -47,8 +45,8 @@ public class UserApplicationServiceTest {
         when(passwordEncoderServiceMock.encode("testPassword")).thenReturn("encodedPassword");
 
         CreateUserCommand createUserCommand = new CreateUserCommand(
-            "test@mail.com", 
-            "testUser", 
+            "test@mail.com",
+            "testUser",
             "testPassword"
         );
 
@@ -65,9 +63,9 @@ public class UserApplicationServiceTest {
         PasswordEncoderServiceInterface passwordEncoderServiceMock = Mockito.mock(PasswordEncoderServiceInterface.class);
 
         User user = new User(
-            new UserId(1L), 
-            new Username("testUser"), 
-            new EmailAddress("test@mail.com"), 
+            new UserId(1L),
+            new Username("testUser"),
+            new EmailAddress("test@mail.com"),
             new PasswordHashed("testPassword"),
             LocalDateTime.now()
         );
@@ -75,14 +73,14 @@ public class UserApplicationServiceTest {
         when(userRepositoryMock.findByEmail("test@mail.com")).thenReturn(Optional.of(user));
 
         CreateUserCommand createUserCommand = new CreateUserCommand(
-            "test@mail.com", 
-            "testUser", 
+            "test@mail.com",
+            "testUser",
             "testPassword"
         );
 
         UserApplicationService userApplicationService = new UserApplicationService(userRepositoryMock, passwordEncoderServiceMock);
         UserExistsException exception = assertThrows(
-            UserExistsException.class, 
+            UserExistsException.class,
             () -> userApplicationService.createUser(createUserCommand)
         );
         
