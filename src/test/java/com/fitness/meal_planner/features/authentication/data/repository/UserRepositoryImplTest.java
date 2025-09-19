@@ -1,4 +1,4 @@
-package com.fitness.meal_planner.features.signup.data.repository;
+package com.fitness.meal_planner.features.authentication.data.repository;
 
 import com.fitness.meal_planner.features.authentication.data.model.UserModel;
 

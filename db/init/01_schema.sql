@@ -15,7 +15,7 @@ CREATE TABLE ingredients (
     type VARCHAR(255),
     brand VARCHAR(255),
     measurement_unit VARCHAR(255),
-    unit_size DOUBLE(3,2),
+    unit_size DOUBLE,
     calories_per_unit INT,
     proteins_per_unit DOUBLE,
     carbohydrates_per_unit DOUBLE,
