@@ -4,7 +4,9 @@ import com.fitness.meal_planner.features.ingredients.data.model.IngredientModel;
 import com.fitness.meal_planner.features.ingredients.domain.entity.Ingredient;
 import com.fitness.meal_planner.features.ingredients.domain.entity.IngredientType;
 import com.fitness.meal_planner.features.ingredients.domain.entity.MeassurementUnit;
+import org.springframework.stereotype.Component;
 
+@Component
 public class IngredientsMapper {
     private IngredientsMapper() {
 
