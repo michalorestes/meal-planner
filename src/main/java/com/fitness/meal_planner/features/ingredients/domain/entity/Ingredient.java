@@ -1,5 +1,6 @@
 package com.fitness.meal_planner.features.ingredients.domain.entity;
 
+import com.fitness.meal_planner.shared.valueobject.Macronutrients;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
@@ -12,10 +13,6 @@ public class Ingredient {
     private String brand;
     private MeassurementUnit meassurementUnit;
     private double unitSize;
-    private int caloriesPerUnit;
-    private double proteinsPerUnit;
-    private double carbohydratesPerUnit;
-    private double fatsPerUnit;
-    private double fibrePerUnit;
+    private Macronutrients macronutrients;
     private String shopLink;
 }

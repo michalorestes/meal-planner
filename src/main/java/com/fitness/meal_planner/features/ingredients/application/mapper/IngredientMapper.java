@@ -14,11 +14,11 @@ public class IngredientMapper {
                 .brand(ingredient.getBrand())
                 .measurementUnit(ingredient.getMeassurementUnit().getUnit())
                 .unitSize(ingredient.getUnitSize())
-                .caloriesPerUnit(ingredient.getCaloriesPerUnit())
-                .proteinsPerUnit(ingredient.getProteinsPerUnit())
-                .carbohydratesPerUnit(ingredient.getCarbohydratesPerUnit())
-                .fatsPerUnit(ingredient.getFatsPerUnit())
-                .fibrePerUnit(ingredient.getFibrePerUnit())
+                .caloriesPerUnit(ingredient.getMacronutrients().calories())
+                .proteinsPerUnit(ingredient.getMacronutrients().protein())
+                .carbohydratesPerUnit(ingredient.getMacronutrients().carbohydrates())
+                .fatsPerUnit(ingredient.getMacronutrients().fats())
+                .fibrePerUnit(ingredient.getMacronutrients().fibre())
                 .shopLink(ingredient.getShopLink())
                 .build();
     }

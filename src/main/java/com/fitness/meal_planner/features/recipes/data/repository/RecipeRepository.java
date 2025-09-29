@@ -3,7 +3,7 @@ package com.fitness.meal_planner.features.recipes.data.repository;
 import com.fitness.meal_planner.features.recipes.data.mapper.RecipeMapper;
 import com.fitness.meal_planner.features.recipes.data.model.RecipeModel;
 import com.fitness.meal_planner.features.recipes.domain.entity.Recipe;
-import com.fitness.meal_planner.features.recipes.domain.repository.RecipeInterface;
+import com.fitness.meal_planner.features.recipes.domain.repository.RecipeRepositoryInterface;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Repository;
 
@@ -12,7 +12,7 @@ import java.util.List;
 
 @Repository
 @AllArgsConstructor
-public class RecipeRepository implements RecipeInterface {
+public class RecipeRepository implements RecipeRepositoryInterface {
 
     private final RecipeJpaRepository recipeJpaRepository;
     private final RecipeMapper mapper;
@@ -24,5 +24,12 @@ public class RecipeRepository implements RecipeInterface {
         recipeModels.forEach(model -> recipes.add(mapper.toDomain(model)));
 
         return recipes;
+    }
+
+    @Override
+    public Recipe save(Recipe recipe) {
+        RecipeModel model = recipeJpaRepository.save(mapper.toModel(recipe));
+
+        return mapper.toDomain(model);
     }
 }

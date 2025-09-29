@@ -10,11 +10,11 @@ public class RecipeDtoMapper {
         return new RecipePreviewDto(
                 recipe.getName(),
                 recipe.getServings(),
-                recipe.getCalories(),
-                recipe.getProtein(),
-                recipe.getCarbohydrates(),
-                recipe.getFats(),
-                recipe.getFibre()
+                recipe.getMacronutrients().calories(),
+                recipe.getMacronutrients().protein(),
+                recipe.getMacronutrients().carbohydrates(),
+                recipe.getMacronutrients().fats(),
+                recipe.getMacronutrients().fibre()
         );
     }
 }

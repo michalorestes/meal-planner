@@ -1,10 +1,12 @@
 package com.fitness.meal_planner.features.ingredients.data;
 
+import com.fitness.meal_planner.features.ingredients.data.mapper.IngredientsMapper;
 import com.fitness.meal_planner.features.ingredients.data.model.IngredientModel;
 import com.fitness.meal_planner.features.ingredients.data.repository.IngredientsRepositoryImpl;
 import com.fitness.meal_planner.features.ingredients.domain.entity.Ingredient;
 import com.fitness.meal_planner.features.ingredients.domain.entity.IngredientType;
 import com.fitness.meal_planner.features.ingredients.domain.entity.MeassurementUnit;
+import com.fitness.meal_planner.shared.valueobject.Macronutrients;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +17,7 @@ import org.springframework.context.annotation.Import;
 import java.util.List;
 
 @DataJpaTest
-@Import(IngredientsRepositoryImpl.class)
+@Import({IngredientsRepositoryImpl.class, IngredientsMapper.class})
 public class IngredientRepositoryImplTest {
 
     @Autowired
@@ -33,11 +35,7 @@ public class IngredientRepositoryImplTest {
             "Brand A",
             MeassurementUnit.GRAMS,
             100.0,
-            165,
-            31.0,
-            0.0,
-            3.6,
-            0.0,
+            new Macronutrients(165, 31.0, 0.0, 3.6, 0.0),
             "http://example.com/chicken"
         );
 

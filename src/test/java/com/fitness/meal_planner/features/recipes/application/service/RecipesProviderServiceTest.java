@@ -1,8 +1,7 @@
-package com.fitness.meal_planner.features.recipes.application;
+package com.fitness.meal_planner.features.recipes.application.service;
 
 import com.fitness.meal_planner.features.recipes.application.dto.RecipePreviewDto;
 import com.fitness.meal_planner.features.recipes.application.mapper.RecipeDtoMapper;
-import com.fitness.meal_planner.features.recipes.application.service.RecipesProviderService;
 import com.fitness.meal_planner.features.recipes.data.mapper.RecipeMapper;
 import com.fitness.meal_planner.features.recipes.data.model.RecipeModel;
 import com.fitness.meal_planner.features.recipes.data.repository.RecipeRepository;
