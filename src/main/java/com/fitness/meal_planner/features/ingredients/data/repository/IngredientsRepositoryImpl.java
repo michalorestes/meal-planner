@@ -15,13 +15,14 @@ import java.util.List;
 public class IngredientsRepositoryImpl implements IngredientsRepositoryInterface {
 
     private final IngredientsJpaRepository jpaRepository;
+    private final IngredientsMapper mapper;
 
     @Override
     public Ingredient save(Ingredient ingredient) {
-        IngredientModel model = IngredientsMapper.toModel(ingredient);
+        IngredientModel model = mapper.toModel(ingredient);
         IngredientModel savedModel = jpaRepository.save(model);
 
-        return IngredientsMapper.toDomainEntity(savedModel);
+        return mapper.toDomainEntity(savedModel);
     }
 
     public List<Ingredient> findAll() {
@@ -29,7 +30,7 @@ public class IngredientsRepositoryImpl implements IngredientsRepositoryInterface
         jpaRepository.findAll().forEach(models::add);
 
         return models.stream()
-                .map(IngredientsMapper::toDomainEntity)
+                .map(mapper::toDomainEntity)
                 .toList();
     }
 }

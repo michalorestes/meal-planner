@@ -4,6 +4,7 @@ import com.fitness.meal_planner.features.ingredients.data.model.IngredientModel;
 import com.fitness.meal_planner.features.ingredients.domain.entity.Ingredient;
 import com.fitness.meal_planner.features.ingredients.domain.entity.IngredientType;
 import com.fitness.meal_planner.features.ingredients.domain.entity.MeassurementUnit;
+import com.fitness.meal_planner.shared.valueobject.Macronutrients;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -12,7 +13,7 @@ public class IngredientsMapper {
 
     }
 
-    public static Ingredient toDomainEntity(IngredientModel model) {
+    public Ingredient toDomainEntity(IngredientModel model) {
         return new Ingredient(
             model.getId(),
             model.getName(),
@@ -20,16 +21,18 @@ public class IngredientsMapper {
             model.getBrand(),
             MeassurementUnit.fromString(model.getMeasurementUnit()),
             model.getUnitSize(),
-            model.getCaloriesPerUnit(),
-            model.getProteinsPerUnit(),
-            model.getCarbohydratesPerUnit(),
-            model.getFatsPerUnit(),
-            model.getFibrePerUnit(),
+            new Macronutrients(
+                    model.getCaloriesPerUnit(),
+                    model.getProteinsPerUnit(),
+                    model.getCarbohydratesPerUnit(),
+                    model.getFatsPerUnit(),
+                    model.getFibrePerUnit()
+            ),
             model.getShopLink()
         );
     }
 
-    public static IngredientModel toModel(Ingredient ingredient) {
+    public IngredientModel toModel(Ingredient ingredient) {
         IngredientModel model = new IngredientModel();
 
         if (ingredient.getId() != null) {
@@ -41,11 +44,11 @@ public class IngredientsMapper {
         model.setBrand(ingredient.getBrand());
         model.setMeasurementUnit(ingredient.getMeassurementUnit().toString());
         model.setUnitSize(ingredient.getUnitSize());
-        model.setCaloriesPerUnit(ingredient.getCaloriesPerUnit());
-        model.setProteinsPerUnit(ingredient.getProteinsPerUnit());
-        model.setCarbohydratesPerUnit(ingredient.getCarbohydratesPerUnit());
-        model.setFatsPerUnit(ingredient.getFatsPerUnit());
-        model.setFibrePerUnit(ingredient.getFibrePerUnit());
+        model.setCaloriesPerUnit(ingredient.getMacronutrients().calories());
+        model.setProteinsPerUnit(ingredient.getMacronutrients().protein());
+        model.setCarbohydratesPerUnit(ingredient.getMacronutrients().carbohydrates());
+        model.setFatsPerUnit(ingredient.getMacronutrients().fats());
+        model.setFibrePerUnit(ingredient.getMacronutrients().fibre());
         model.setShopLink(ingredient.getShopLink());
 
         return model;

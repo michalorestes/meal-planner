@@ -6,6 +6,7 @@ import com.fitness.meal_planner.features.ingredients.domain.entity.Ingredient;
 import com.fitness.meal_planner.features.ingredients.domain.entity.IngredientType;
 import com.fitness.meal_planner.features.ingredients.domain.entity.MeassurementUnit;
 import com.fitness.meal_planner.features.ingredients.domain.repository.IngredientsRepositoryInterface;
+import com.fitness.meal_planner.shared.valueobject.Macronutrients;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -31,11 +32,7 @@ public class IngredientsProviderServiceTest {
                         "Brand A",
                         MeassurementUnit.GRAMS,
                         100.0,
-                        165,
-                        31.0,
-                        0.0,
-                        3.6,
-                        0.0,
+                        new Macronutrients(165, 31.0, 0.0, 3.6, 0.0),
                         "http://example.com/chicken"
                 ),
                 new Ingredient(
@@ -45,11 +42,7 @@ public class IngredientsProviderServiceTest {
                         "Brand B",
                         MeassurementUnit.GRAMS,
                         100.0,
-                        41,
-                        0.9,
-                        9.6,
-                        0.2,
-                        2.8,
+                        new Macronutrients(41, 0.9, 9.6, 0.2, 2.8),
                         "http://example.com/carrot"
                 )
         );

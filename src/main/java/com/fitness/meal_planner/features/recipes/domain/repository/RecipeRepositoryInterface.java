@@ -4,6 +4,7 @@ import com.fitness.meal_planner.features.recipes.domain.entity.Recipe;
 
 import java.util.List;
 
-public interface RecipeInterface {
+public interface RecipeRepositoryInterface {
     List<Recipe> getRecipes();
+    Recipe save(Recipe recipe);
 }
