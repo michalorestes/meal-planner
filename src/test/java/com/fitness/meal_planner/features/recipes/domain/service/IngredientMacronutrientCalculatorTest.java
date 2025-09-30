@@ -1,8 +1,6 @@
 package com.fitness.meal_planner.features.recipes.domain.service;
 
-import com.fitness.meal_planner.features.ingredients.domain.entity.Ingredient;
-import com.fitness.meal_planner.features.ingredients.domain.entity.IngredientType;
-import com.fitness.meal_planner.features.ingredients.domain.entity.MeassurementUnit;
+import com.fitness.meal_planner.features.recipes.domain.entity.Ingredient;
 import com.fitness.meal_planner.shared.valueobject.Macronutrients;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -29,14 +27,10 @@ class IngredientMacronutrientCalculatorTest {
         Ingredient ingredient = new Ingredient(
                 1L,
                 "Chicken Breast",
-                IngredientType.PROTEIN,
-                "Brand",
-                MeassurementUnit.GRAMS,
-                100.0, // Base unit size
-                baseMacros,
-                null
+                100.0,
+                baseMacros
         );
-        double amount = 250; // We want to calculate for 250g
+        double amount = 250;
 
         Macronutrients result = calculator.calculate(amount, ingredient);
 
@@ -48,7 +42,7 @@ class IngredientMacronutrientCalculatorTest {
     @DisplayName("Should round up calories to the nearest integer")
     void shouldRoundUpCalories() {
         Macronutrients baseMacros = new Macronutrients(101, 10.0, 10.0, 10.0, 10.0);
-        Ingredient ingredient = new Ingredient(1L, "Test Ingredient", IngredientType.PROTEIN, "Brand", MeassurementUnit.GRAMS, 100.0, baseMacros, null);
+        Ingredient ingredient = new Ingredient(1L, "Test Ingredient", 100.0, baseMacros);
         double amount = 50; // 0.5x the unit size
 
         Macronutrients result = calculator.calculate(amount, ingredient);
@@ -61,7 +55,7 @@ class IngredientMacronutrientCalculatorTest {
     @DisplayName("Should throw IllegalArgumentException for zero or negative amount")
     void shouldThrowExceptionForInvalidAmount(double invalidAmount) {
         Macronutrients baseMacros = new Macronutrients(100, 10, 10, 10, 10);
-        Ingredient ingredient = new Ingredient(1L, "Test", IngredientType.PROTEIN, "Brand", MeassurementUnit.GRAMS, 100.0, baseMacros, null);
+        Ingredient ingredient = new Ingredient(1L, "Test", 100.0, baseMacros);
 
         IllegalArgumentException exception = assertThrows(
                 IllegalArgumentException.class,
@@ -73,7 +67,7 @@ class IngredientMacronutrientCalculatorTest {
     @Test
     @DisplayName("Should throw NullPointerException if ingredient macronutrients are null")
     void shouldThrowExceptionForNullMacronutrients() {
-        Ingredient ingredientWithNullMacros = new Ingredient(1L, "Test", IngredientType.PROTEIN, "Brand", MeassurementUnit.GRAMS, 100.0, null, null);
+        Ingredient ingredientWithNullMacros = new Ingredient(1L, "Test", 100.0, null);
 
         NullPointerException exception = assertThrows(
                 NullPointerException.class,

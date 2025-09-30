@@ -1,7 +1,7 @@
 package com.fitness.meal_planner.features.recipes.application.service;
 
 import com.fitness.meal_planner.features.recipes.application.dto.RecipeIngredientDetail;
-import com.fitness.meal_planner.features.ingredients.domain.entity.Ingredient;
+import com.fitness.meal_planner.features.recipes.domain.entity.Ingredient;
 import com.fitness.meal_planner.features.recipes.domain.entity.RecipeIngredient;
 import com.fitness.meal_planner.features.recipes.domain.port.IngredientsProviderPort;
 import com.fitness.meal_planner.features.recipes.domain.service.IngredientMacronutrientCalculatorInterface;
@@ -28,7 +28,7 @@ public class RecipeIngredientCreatorService {
         Map<Long, Ingredient> ingredients = ingredientsProviderPort
                 .getIngredients(ingredientIds)
                 .stream()
-                .collect(Collectors.toMap(Ingredient::getId, i -> i));
+                .collect(Collectors.toMap(Ingredient::id, i -> i));
 
         return recipeIngredientDetails
                 .stream()
@@ -40,8 +40,8 @@ public class RecipeIngredientCreatorService {
         Macronutrients macronutrients = macronutrientCalculator.calculate(detail.amount(), ingredient);
 
         return new RecipeIngredient(
-                ingredient.getId(),
-                ingredient.getName(),
+                ingredient.id(),
+                ingredient.name(),
                 detail.amount(),
                 macronutrients
         );

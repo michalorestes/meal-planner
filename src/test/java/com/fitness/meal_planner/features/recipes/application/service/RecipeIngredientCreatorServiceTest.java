@@ -1,8 +1,6 @@
 package com.fitness.meal_planner.features.recipes.application.service;
 
-import com.fitness.meal_planner.features.ingredients.domain.entity.Ingredient;
-import com.fitness.meal_planner.features.ingredients.domain.entity.IngredientType;
-import com.fitness.meal_planner.features.ingredients.domain.entity.MeassurementUnit;
+import com.fitness.meal_planner.features.recipes.domain.entity.Ingredient;
 import com.fitness.meal_planner.features.recipes.application.dto.RecipeIngredientDetail;
 import com.fitness.meal_planner.features.recipes.domain.entity.RecipeIngredient;
 import com.fitness.meal_planner.features.recipes.domain.port.IngredientsProviderPort;
@@ -38,22 +36,14 @@ public class RecipeIngredientCreatorServiceTest {
                 new Ingredient(
                         1L,
                         "Chicken Breast",
-                        IngredientType.PROTEIN,
-                        "Brand A",
-                        MeassurementUnit.GRAMS,
                         100.0,
-                        new Macronutrients(400, 31.0, 0.0, 3.6, 0.0),
-                        "http://example.com/chicken"
+                        new Macronutrients(400, 31.0, 0.0, 3.6, 0.0)
                 ),
                 new Ingredient(
                         2L,
                         "Lettuce",
-                        IngredientType.VEGETABLE,
-                        "Brand B",
-                        MeassurementUnit.GRAMS,
                         100.0,
-                        new Macronutrients(50, 1.0, 50.0, 3.6, 0.0),
-                        "http://example.com/chicken"
+                        new Macronutrients(50, 1.0, 50.0, 3.6, 0.0)
                 )
         );
 

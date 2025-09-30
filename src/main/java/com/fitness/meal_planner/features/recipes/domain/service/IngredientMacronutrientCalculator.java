@@ -1,6 +1,6 @@
 package com.fitness.meal_planner.features.recipes.domain.service;
 
-import com.fitness.meal_planner.features.ingredients.domain.entity.Ingredient;
+import com.fitness.meal_planner.features.recipes.domain.entity.Ingredient;
 import com.fitness.meal_planner.shared.valueobject.Macronutrients;
 import org.springframework.stereotype.Service;
 
@@ -15,9 +15,9 @@ public class IngredientMacronutrientCalculator implements IngredientMacronutrien
             throw new IllegalArgumentException("Amount must be greater than 0");
         }
 
-        double scalingFactor = amount / ingredient.getUnitSize();
+        double scalingFactor = amount / ingredient.unitSize();
         Macronutrients baseMarcos = Objects.requireNonNull(
-                ingredient.getMacronutrients(),
+                ingredient.macronutrients(),
                 "Macronutrients must not be null"
         );
 
