@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 @Repository
 @AllArgsConstructor
@@ -30,6 +31,16 @@ public class IngredientsRepositoryImpl implements IngredientsRepositoryInterface
         jpaRepository.findAll().forEach(models::add);
 
         return models.stream()
+                .map(mapper::toDomainEntity)
+                .toList();
+    }
+
+    public List<Ingredient> findAllById(Set<Long> ids) {
+        List<IngredientModel> models = new ArrayList<>();
+        jpaRepository.findAllById(ids).forEach(models::add);
+
+        return models
+                .stream()
                 .map(mapper::toDomainEntity)
                 .toList();
     }
